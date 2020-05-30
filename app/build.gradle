@@ -36,9 +36,15 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
 
-    // 리사이클럴뷰
+    // recyclerView
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+    // Glide
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    // Skip this if you don't want to use integration libraries or configure Glide.
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 
     //동그란 이미지 커스텀 뷰 라이브러리 : https://github.com/hbodenhof/CircleImageView
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+
 }
