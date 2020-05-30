@@ -9,7 +9,7 @@ class CalendarViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
      private val imgv_day: ImageView = itemView.findViewById(R.id.imgv_day)
 
      fun bind(data: CalendarData){
-         Glide.with(itemView.context).load(data.icon).into(imgv_day)
+         Glide.with(itemView.context).load(data.imgIcon).into(imgv_day)
 
      }
 
