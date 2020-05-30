@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class ListAdapter (private val context: Context) : RecyclerView.Adapter<ListViewHolder>(){
 
-    var datas = mutableListOf<ListData>()
+    var datas = mutableListOf<ListItemData>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
         val view =  LayoutInflater.from(context).inflate(R.layout.item_list,parent,false)
         return ListViewHolder(view)
