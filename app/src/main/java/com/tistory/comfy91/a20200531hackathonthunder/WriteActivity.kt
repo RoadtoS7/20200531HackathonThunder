@@ -18,13 +18,12 @@ class WriteActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.write_activity)
 
-        button2.setOnClickListener{
+        button2.setOnClickListener {
             showToast("추가 버튼이 눌렸습니다.")
 
-            if(edit1.text.isNullOrBlank()||edit2.text.isNullOrBlank()) {
+            if (edit1.text.isNullOrBlank() || edit2.text.isNullOrBlank()) {
                 showToast("제목과 내용을 채워주세요.")
-            }else
-
+            } else {
                 requestToServer.service.requestWrite(
                     RequestWrite(
                         uid = null,
@@ -32,18 +31,18 @@ class WriteActivity : AppCompatActivity() {
                         icon_category = null,
                         diary_content = edit2.text.toString()
                     )
-                ).enqueue(object :Callback<ResponseWrite>{
+                ).enqueue(object : Callback<ResponseWrite> {
                     override fun onFailure(call: Call<ResponseWrite>, t: Throwable) {
-                          //통신 실패
+                        //통신 실패
                     }
 
                     override fun onResponse(
                         call: Call<ResponseWrite>,
                         response: Response<ResponseWrite>
                     ) {
-                       //통신 성공
-                        if(response.isSuccessful) {
-                            if(response.body()!!.success){
+                        //통신 성공
+                        if (response.isSuccessful) {
+                            if (response.body()!!.success) {
                                 //ResponseWrite의 success가 true인 경우
                             }
                         }
@@ -51,66 +50,63 @@ class WriteActivity : AppCompatActivity() {
 
                 })
 
+            }
         }
 
+            image1.setOnClickListener {
+                showToast("중식이 클릭되었습니다.")
 
-        image1.setOnClickListener {
-            showToast("중식이 클릭되었습니다.")
+                //인증 상품은 눌린채로, 나머지는 non으로
+                image1.setImageResource(R.drawable.click)
+                image2.setImageResource(R.drawable.nonclick)
+                image3.setImageResource(R.drawable.nonclick)
+                image4.setImageResource(R.drawable.nonclick)
+                image5.setImageResource(R.drawable.nonclick)
+            }
 
-            //인증 상품은 눌린채로, 나머지는 non으로
-            image1.setImageResource(R.drawable.click)
-            image2.setImageResource(R.drawable.nonclick)
-            image3.setImageResource(R.drawable.nonclick)
-            image4.setImageResource(R.drawable.nonclick)
-            image5.setImageResource(R.drawable.nonclick)
-        }
+            image2.setOnClickListener {
+                showToast("양식이 클릭되었습니다.")
 
-        image2.setOnClickListener {
-            showToast("양식이 클릭되었습니다.")
+                //인증 상품은 눌린채로, 나머지는 non으로
+                image1.setImageResource(R.drawable.nonclick)
+                image2.setImageResource(R.drawable.click)
+                image3.setImageResource(R.drawable.nonclick)
+                image4.setImageResource(R.drawable.nonclick)
+                image5.setImageResource(R.drawable.nonclick)
+            }
 
-            //인증 상품은 눌린채로, 나머지는 non으로
-            image1.setImageResource(R.drawable.nonclick)
-            image2.setImageResource(R.drawable.click)
-            image3.setImageResource(R.drawable.nonclick)
-            image4.setImageResource(R.drawable.nonclick)
-            image5.setImageResource(R.drawable.nonclick)
-        }
+            image3.setOnClickListener {
+                showToast("일식이 클릭되었습니다.")
 
-        image3.setOnClickListener {
-            showToast("일식이 클릭되었습니다.")
+                //인증 상품은 눌린채로, 나머지는 non으로
+                image1.setImageResource(R.drawable.nonclick)
+                image2.setImageResource(R.drawable.nonclick)
+                image3.setImageResource(R.drawable.click)
+                image4.setImageResource(R.drawable.nonclick)
+                image5.setImageResource(R.drawable.nonclick)
+            }
 
-            //인증 상품은 눌린채로, 나머지는 non으로
-            image1.setImageResource(R.drawable.nonclick)
-            image2.setImageResource(R.drawable.nonclick)
-            image3.setImageResource(R.drawable.click)
-            image4.setImageResource(R.drawable.nonclick)
-            image5.setImageResource(R.drawable.nonclick)
-        }
+            image4.setOnClickListener {
+                showToast("한식이 클릭되었습니다.")
 
-        image4.setOnClickListener {
-            showToast("한식이 클릭되었습니다.")
+                //인증 상품은 눌린채로, 나머지는 non으로
+                image1.setImageResource(R.drawable.nonclick)
+                image2.setImageResource(R.drawable.nonclick)
+                image3.setImageResource(R.drawable.nonclick)
+                image4.setImageResource(R.drawable.click)
+                image5.setImageResource(R.drawable.nonclick)
+            }
 
-            //인증 상품은 눌린채로, 나머지는 non으로
-            image1.setImageResource(R.drawable.nonclick)
-            image2.setImageResource(R.drawable.nonclick)
-            image3.setImageResource(R.drawable.nonclick)
-            image4.setImageResource(R.drawable.click)
-            image5.setImageResource(R.drawable.nonclick)
-        }
+            image5.setOnClickListener {
+                showToast("기타가 클릭되었습니다.")
 
-        image5.setOnClickListener {
-            showToast("기타가 클릭되었습니다.")
-
-            //인증 상품은 눌린채로, 나머지는 non으로
-            image1.setImageResource(R.drawable.nonclick)
-            image2.setImageResource(R.drawable.nonclick)
-            image3.setImageResource(R.drawable.nonclick)
-            image4.setImageResource(R.drawable.nonclick)
-            image5.setImageResource(R.drawable.click)
+                //인증 상품은 눌린채로, 나머지는 non으로
+                image1.setImageResource(R.drawable.nonclick)
+                image2.setImageResource(R.drawable.nonclick)
+                image3.setImageResource(R.drawable.nonclick)
+                image4.setImageResource(R.drawable.nonclick)
+                image5.setImageResource(R.drawable.click)
+            }
         }
     }
-}
 
-private fun <T> Call<T>.enqueue(callback: Callback<ResponseWrite>) {
-
-}
