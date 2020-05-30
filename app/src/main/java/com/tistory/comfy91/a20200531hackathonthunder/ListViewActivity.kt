@@ -6,7 +6,7 @@ import android.os.Bundle
 class ListViewActivity : AppCompatActivity() {
 
     lateinit var listAdapter: ListAdapter
-    val datas = mutableListOf<ListData>()
+    val datas = mutableListOf<ListItemData>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_view)
