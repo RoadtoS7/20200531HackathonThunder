@@ -12,31 +12,147 @@
         android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_month1"
             android:layout_width="match_parent"
-            android:layout_height="600dp"
+            android:layout_height="350dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
+                style="@style/TextStyle2"
                 android:id="@+id/month1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="MAY"
+                android:lineSpacingExtra="6sp"
+                android:text="February"
+                android:textColor="@color/greyish_brown"
+                android:textSize="23sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:elevation="2dp"
+                 />
+            
+            <ImageView
+                app:layout_constraintStart_toStartOf="@id/month1"
+                app:layout_constraintEnd_toEndOf="@id/month1"
+                app:layout_constraintTop_toTopOf="@id/month1"
+                android:layout_marginTop="16dp"
+                android:layout_width="107dp"
+                android:layout_height="13dp"
+                android:src="@drawable/main_img_pen_1"/>
+            
+
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_april_cal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginTop="50dp"
                 app:layout_constraintEnd_toEndOf="@id/month1"
                 app:layout_constraintStart_toStartOf="@id/month1"
                 app:layout_constraintTop_toBottomOf="@id/month1"
-                android:layout_marginTop="50dp"/>
+                android:layout_marginStart="26dp"
+                android:layout_marginEnd="25dp"/>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_month2"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            app:layout_constraintStart_toStartOf="@id/layout_month1"
+            app:layout_constraintTop_toBottomOf="@id/layout_month1"
+            >
+
+            <TextView
+                style="@style/TextStyle2"
+                android:id="@+id/month2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="6sp"
+                android:text="March"
+                android:textColor="@color/greyish_brown"
+                android:textSize="23sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:elevation="2dp"
+                />
+
+            <ImageView
+                app:layout_constraintStart_toStartOf="@id/month2"
+                app:layout_constraintEnd_toEndOf="@id/month2"
+                app:layout_constraintTop_toTopOf="@id/month2"
+                android:layout_marginTop="16dp"
+                android:layout_width="107dp"
+                android:layout_height="13dp"
+                android:src="@drawable/main_img_pen_2"/>
+
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_march_cal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="50dp"
+                app:layout_constraintEnd_toEndOf="@id/month2"
+                app:layout_constraintStart_toStartOf="@id/month2"
+                app:layout_constraintTop_toBottomOf="@id/month2"
+                android:layout_marginStart="26dp"
+                android:layout_marginEnd="25dp"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_month3"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            app:layout_constraintStart_toStartOf="@id/layout_month2"
+            app:layout_constraintTop_toBottomOf="@id/layout_month2"
+            >
+
+            <TextView
+                style="@style/TextStyle2"
+                android:id="@+id/month3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="6sp"
+                android:text="April"
+                android:textColor="@color/greyish_brown"
+                android:textSize="23sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:elevation="2dp"
+                />
+
+            <ImageView
+                app:layout_constraintStart_toStartOf="@id/month3"
+                app:layout_constraintEnd_toEndOf="@id/month3"
+                app:layout_constraintTop_toTopOf="@id/month3"
+                android:layout_marginTop="16dp"
+                android:layout_width="107dp"
+                android:layout_height="13dp"
+                android:src="@drawable/main_img_pen_3"/>
+
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_jun_cal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="50dp"
+                app:layout_constraintEnd_toEndOf="@id/month3"
+                app:layout_constraintStart_toStartOf="@id/month3"
+                app:layout_constraintTop_toBottomOf="@id/month3"
+                android:layout_marginStart="26dp"
+                android:layout_marginEnd="25dp"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

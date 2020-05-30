@@ -1,9 +1,12 @@
 package com.tistory.comfy91.a20200531hackathonthunder
 
+
+
 import android.content.Context
 import android.graphics.Rect
 import android.os.Bundle
 import android.util.TypedValue
+import android.view.Menu
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
@@ -19,9 +22,21 @@ class CalendarActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calendar)
 
+        initAppBar()
         initUi()
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.actionbar_action, menu)
+        return true
+    }
+
+    private fun initAppBar(){
+        val ab: androidx.appcompat.app.ActionBar? = supportActionBar
+        ab?.setIcon(R.drawable.main_img_logo)
+        ab?.setDisplayUseLogoEnabled(true)
+        ab?.setDisplayShowHomeEnabled(true)
+    }
     private fun initUi() {
         val rvAdapterApril = CalendarAdapter(this@CalendarActivity)
             .apply {
@@ -29,9 +44,25 @@ class CalendarActivity : AppCompatActivity() {
             }
         rv_april_cal.adapter = rvAdapterApril
         rv_april_cal.layoutManager = GridLayoutManager(this@CalendarActivity, 7)
-        rv_april_cal.addItemDecoration(CalItemDecoration(this@CalendarActivity, 2))
+//        rv_april_cal.addItemDecoration(CalItemDecoration(this@CalendarActivity, 2))
+
+        val rvAdapterMarch = CalendarAdapter(this@CalendarActivity)
+            .apply {
+                this.datas = getDummyData()
+            }
+        rv_march_cal.adapter = rvAdapterMarch
+        rv_march_cal.layoutManager = GridLayoutManager(this@CalendarActivity, 7)
+
+        val rvAdapterJun = CalendarAdapter(this@CalendarActivity)
+            .apply {
+                this.datas = getDummyData()
+            }
+        rv_jun_cal.adapter = rvAdapterMarch
+        rv_jun_cal.layoutManager = GridLayoutManager(this@CalendarActivity, 7)
 
         rvAdapterApril.notifyDataSetChanged()
+        rvAdapterMarch.notifyDataSetChanged()
+        rvAdapterJun.notifyDataSetChanged()
     }
 
     private fun getDummyData(): MutableList<CalendarData> {
@@ -39,217 +70,217 @@ class CalendarActivity : AppCompatActivity() {
             CalendarData(
                 "2020-05-01",
                 false,
-                "https://cdn.pixabay.com/photo/2020/05/26/18/22/background-5224200__480.png",
+                R.drawable.ic_japanese,
                 "korean",
                 "I"
             ),
             CalendarData(
                 "2020-05-02",
                 false,
-                "https://cdn.pixabay.com/photo/2020/05/26/18/22/background-5224200__480.png",
+                R.drawable.ic_chinese,
                 "korean",
                 "I"
             ),
             CalendarData(
                 "2020-05-03",
                 false,
-                "https://cdn.pixabay.com/photo/2020/05/26/18/22/background-5224200__480.png",
+                R.drawable.ic_chineseblack,
                 "korean",
                 "I"
             ),
             CalendarData(
                 "2020-05-04",
                 false,
-                "https://cdn.pixabay.com/photo/2020/05/26/18/22/background-5224200__480.png",
+                R.drawable.ic_italian,
                 "korean",
                 "I"
             ),
             CalendarData(
                 "2020-05-05",
                 false,
-                "https://cdn.pixabay.com/photo/2020/05/26/18/22/background-5224200__480.png",
+                R.drawable.ic_korean,
                 "korean",
                 "I"
             ),
             CalendarData(
                 "2020-05-06",
                 false,
-                "https://cdn.pixabay.com/photo/2020/05/26/18/22/background-5224200__480.png",
+                R.drawable.ic_japaneseblack,
                 "korean",
                 "I"
             ),
             CalendarData(
                 "2020-05-07",
                 false,
-                "https://cdn.pixabay.com/photo/2020/05/26/18/22/background-5224200__480.png",
+                R.drawable.ic_italian,
                 "korean",
                 "I"
             ),
             CalendarData(
                 "2020-05-08",
                 false,
-                "https://cdn.pixabay.com/photo/2020/05/26/18/22/background-5224200__480.png",
+                R.drawable.ic_chineseblack,
                 "korean",
                 "I"
             ),
             CalendarData(
                 "2020-05-09",
                 false,
-                "https://cdn.pixabay.com/photo/2020/05/26/18/22/background-5224200__480.png",
+                R.drawable.ic_japanese,
                 "korean",
                 "I"
             ),
             CalendarData(
                 "2020-05-10",
                 false,
-                "https://cdn.pixabay.com/photo/2020/05/26/18/22/background-5224200__480.png",
+                R.drawable.ic_korean,
                 "korean",
                 "I"
             ),
             CalendarData(
                 "2020-05-11",
                 false,
-                "https://cdn.pixabay.com/photo/2020/05/26/18/22/background-5224200__480.png",
+                R.drawable.ic_japaneseblack,
                 "korean",
                 "I"
             ),
             CalendarData(
                 "2020-05-12",
                 false,
-                "https://cdn.pixabay.com/photo/2020/05/26/18/22/background-5224200__480.png",
+                R.drawable.ic_chinese,
                 "korean",
                 "I"
             ),
             CalendarData(
                 "2020-05-13",
                 false,
-                "https://cdn.pixabay.com/photo/2020/05/26/18/22/background-5224200__480.png",
+                R.drawable.ic_japanese,
                 "korean",
                 "I"
             ),
             CalendarData(
                 "2020-05-14",
                 false,
-                "https://cdn.pixabay.com/photo/2020/05/26/18/22/background-5224200__480.png",
+                R.drawable.ic_korean,
                 "korean",
                 "I"
             ),
             CalendarData(
                 "2020-05-15",
                 false,
-                "https://cdn.pixabay.com/photo/2020/05/26/18/22/background-5224200__480.png",
+                R.drawable.ic_japanese,
                 "korean",
                 "I"
             ),
             CalendarData(
                 "2020-05-16",
                 false,
-                "https://cdn.pixabay.com/photo/2020/05/26/18/22/background-5224200__480.png",
+                R.drawable.ic_korean,
                 "korean",
                 "I"
             ),
             CalendarData(
                 "2020-05-17",
                 false,
-                "https://cdn.pixabay.com/photo/2020/05/26/18/22/background-5224200__480.png",
+                R.drawable.ic_chineseblack,
                 "korean",
                 "I"
             ),
             CalendarData(
                 "2020-05-18",
                 false,
-                "https://cdn.pixabay.com/photo/2020/05/26/18/22/background-5224200__480.png",
+                R.drawable.ic_italian,
                 "korean",
                 "I"
             ),
             CalendarData(
                 "2020-05-19",
                 false,
-                "https://cdn.pixabay.com/photo/2020/05/26/18/22/background-5224200__480.png",
+                R.drawable.ic_koreanblack,
                 "korean",
                 "I"
             ),
             CalendarData(
                 "2020-05-20",
                 false,
-                "https://cdn.pixabay.com/photo/2020/05/26/18/22/background-5224200__480.png",
+                R.drawable.ic_japaneseblack,
                 "korean",
                 "I"
             ),
             CalendarData(
                 "2020-05-21",
                 false,
-                "https://cdn.pixabay.com/photo/2020/05/26/18/22/background-5224200__480.png",
+                R.drawable.ic_italian,
                 "korean",
                 "I"
             ),
             CalendarData(
                 "2020-05-22",
                 false,
-                "https://cdn.pixabay.com/photo/2020/05/26/18/22/background-5224200__480.png",
+                R.drawable.ic_chineseblack,
                 "korean",
                 "I"
             ),
             CalendarData(
                 "2020-05-23",
                 false,
-                "https://cdn.pixabay.com/photo/2020/05/26/18/22/background-5224200__480.png",
+                R.drawable.ic_japanese,
                 "korean",
                 "I"
             ),
             CalendarData(
                 "2020-05-24",
                 false,
-                "https://cdn.pixabay.com/photo/2020/05/26/18/22/background-5224200__480.png",
+                R.drawable.ic_korean,
                 "korean",
                 "I"
             ),
             CalendarData(
                 "2020-05-25",
                 false,
-                "https://cdn.pixabay.com/photo/2020/05/26/18/22/background-5224200__480.png",
+                R.drawable.ic_japaneseblack,
                 "korean",
                 "I"
             ),
             CalendarData(
                 "2020-05-26",
                 false,
-                "https://cdn.pixabay.com/photo/2020/05/26/18/22/background-5224200__480.png",
+                R.drawable.ic_chinese,
                 "korean",
                 "I"
             ),
             CalendarData(
                 "2020-05-27",
                 false,
-                "https://cdn.pixabay.com/photo/2020/05/26/18/22/background-5224200__480.png",
+                R.drawable.ic_japanese,
                 "korean",
                 "I"
             ),
             CalendarData(
                 "2020-05-28",
                 false,
-                "https://cdn.pixabay.com/photo/2020/05/26/18/22/background-5224200__480.png",
+                R.drawable.ic_korean,
                 "korean",
                 "I"
             ),
             CalendarData(
                 "2020-05-29",
                 false,
-                "https://cdn.pixabay.com/photo/2020/05/26/18/22/background-5224200__480.png",
+                R.drawable.ic_koreanblack,
                 "korean",
                 "I"
             ),
             CalendarData(
                 "2020-05-30",
                 false,
-                "https://cdn.pixabay.com/photo/2020/05/26/18/22/background-5224200__480.png",
+                R.drawable.ic_chinese,
                 "korean",
                 "I"
             ),
             CalendarData(
                 "2020-05-31",
                 false,
-                "https://cdn.pixabay.com/photo/2020/05/26/18/22/background-5224200__480.png",
+                R.drawable.ic_italian,
                 "korean",
                 "I"
             )
