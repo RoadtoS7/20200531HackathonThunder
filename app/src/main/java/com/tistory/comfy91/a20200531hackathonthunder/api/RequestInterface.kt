@@ -16,5 +16,5 @@ interface RequestInterface {
     fun requestCalendar(@Body body: RequestCalendar) : Call<CalendarData>
 
 //    @POST("/diary/register")
-//    fun requestDiaryRegister(@Body )
+//    fun requestWrite(@Body body : RequestWrite) : Call<RequestWrite>
 }
