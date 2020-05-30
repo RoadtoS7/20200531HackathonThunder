@@ -1,5 +1,6 @@
 package com.tistory.comfy91.a20200531hackathonthunder
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.tistory.comfy91.a20200531hackathonthunder.api.RequestToServer
@@ -18,12 +19,24 @@ class WriteActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.write_activity)
 
+        button1.setOnClickListener{
+            showToast("뒤로가기 버튼이 눌렸습니다.")
+
+            val nextIntent = Intent(this@WriteActivity, CalendarActivity::class.java)
+
+            startActivity(nextIntent)
+
+        }
+
         button2.setOnClickListener {
             showToast("추가 버튼이 눌렸습니다.")
 
             if (edit1.text.isNullOrBlank() || edit2.text.isNullOrBlank()) {
                 showToast("제목과 내용을 채워주세요.")
             } else {
+                val nextIntent = Intent(this@WriteActivity, CalendarActivity::class.java)
+
+                startActivity(nextIntent)
 //                requestToServer.service.requestWrite(
 //                    RequestWrite(
 //                        uid = null,
