@@ -4,6 +4,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 
 class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val img_profile = itemView.findViewById<ImageView>(R.id.img_profile)
@@ -13,6 +14,6 @@ class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     fun bind(listItemData: ListItemData) {
         tv_title.text = listItemData.tv_title
         tv_contents.text = listItemData.tv_contents
-
+        Glide.with(itemView).load(listItemData.img_profile).into(img_profile)
     }
 }

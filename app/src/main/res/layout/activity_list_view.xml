@@ -11,6 +11,7 @@
         android:id="@+id/container_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#c7c098"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -22,6 +23,8 @@
             android:layout_marginTop="28dp"
             android:text="Diary"
             android:textSize="20sp"
+            android:textColor="@color/white"
+            android:lineSpacingExtra="5sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -29,10 +32,11 @@
         <ImageView
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_marginStart="16dp"
-            android:src="@color/colorPrimaryDark"
+            android:layout_marginTop="19dp"
+            android:layout_marginStart="7dp"
+            android:src="@drawable/an_writing_diary_back"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textView" />
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
