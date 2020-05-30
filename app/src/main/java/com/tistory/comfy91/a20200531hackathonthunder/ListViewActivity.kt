@@ -28,7 +28,7 @@ class ListViewActivity : AppCompatActivity() {
             add(
                 ListItemData(
                     tv_title = "학교앞 떡볶이집",
-                    img_profile = "https://cdn.pixabay.com/photo/2020/04/17/10/28/apple-blossom-5054129__340.jpg",
+                    img_profile = R.drawable.an_diary_ic_bunsik,
                     tv_contents = "벤또는 언제나 맛있다.\n" +
                             "너무 맛있어서 눈물이 난다. 속이 쓰리다.\n" +
                             "좀 짜다."
@@ -38,7 +38,7 @@ class ListViewActivity : AppCompatActivity() {
             add(
                 ListItemData(
                     tv_title = "순대국밥 먹은날",
-                    img_profile = "https://cdn.pixabay.com/photo/2020/04/12/08/39/squirrel-5033329__340.jpg",
+                    img_profile = R.drawable.ic_korean,
                     tv_contents = "우리집 아파트 아래 순대국밥은\n" +
                             "진짜 존맛탱이다.\n" +
                             "밤새고 먹는 순대국밥 사랑해요."
@@ -47,7 +47,7 @@ class ListViewActivity : AppCompatActivity() {
             add(
                 ListItemData(
                     tv_title = "리조또 먹은날",
-                    img_profile = "https://cdn.pixabay.com/photo/2020/03/21/19/27/sea-4955005__340.jpg",
+                    img_profile = R.drawable.an_diary_ic_italian,
                     tv_contents = "우리집 옆에 있는 리조또 집은 진짜 다 맛있는데\n" +
                             "비싸서 많이 먹지 못해…"
 
@@ -55,7 +55,7 @@ class ListViewActivity : AppCompatActivity() {
             add(
                 ListItemData(
                     tv_title = "연화중식 진짜 개맛있어",
-                    img_profile = "https://cdn.pixabay.com/photo/2020/03/21/19/27/sea-4955005__340.jpg",
+                    img_profile = R.drawable.an_diary_ic_chinese,
                     tv_contents = "와 이건 천상의 맛…\n" +
                             "탕수육 미쳤음?"
 
