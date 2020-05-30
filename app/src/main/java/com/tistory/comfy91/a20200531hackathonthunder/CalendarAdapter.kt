@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
 class CalendarAdapter(private val context: Context): RecyclerView.Adapter<CalendarViewHolder>() {
-    val datas = mutableListOf<CalendarData>()
+    var datas = mutableListOf<CalendarData>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CalendarViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.item_calendar, parent, false)
