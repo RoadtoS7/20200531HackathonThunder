@@ -13,8 +13,7 @@ import retrofit2.Response
 
 class WriteActivity : AppCompatActivity() {
 
-    private val requestToServer =
-        RequestToServer
+    private val requestToServer = RequestToServer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
