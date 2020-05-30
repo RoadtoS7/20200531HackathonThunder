@@ -2,6 +2,7 @@ package com.tistory.comfy91.a20200531hackathonthunder
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.tistory.comfy91.a20200531hackathonthunder.api.RequestToServer
 import com.tistory.comfy91.a20200531hackathonthunder.data.RequestWrite
 import com.tistory.comfy91.a20200531hackathonthunder.data.ResponseWrite
 import com.tistory.comfy91.a20200531hackathonthunder.network.RequestToServer
@@ -12,7 +13,8 @@ import retrofit2.Response
 
 class WriteActivity : AppCompatActivity() {
 
-    private val requestToServer = RequestToServer
+    private val requestToServer =
+        RequestToServer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
