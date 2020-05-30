@@ -18,7 +18,7 @@ class ListAdapter (private val context: Context) : RecyclerView.Adapter<ListView
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-       // holder.bind(datas[position])
+       holder.bind(datas[position])
     }
 
 
