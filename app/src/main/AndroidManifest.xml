@@ -17,6 +17,9 @@
         <activity android:name=".ListViewActivity"></activity>
 
         <activity android:name=".MainActivity">
+
+        </activity>
+        <activity android:name=".WriteActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
