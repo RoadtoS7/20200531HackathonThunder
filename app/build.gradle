@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 29
@@ -29,9 +30,9 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.core:core-ktx:1.2.0'
+    implementation 'androidx.core:core-ktx:1.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    testImplementation 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
@@ -46,5 +47,16 @@ dependencies {
 
     //동그란 이미지 커스텀 뷰 라이브러리 : https://github.com/hbodenhof/CircleImageView
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    //Retrofit 라이브러리 : http://github.com/square/retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+
+    //Retrofit 라이브러리 응답으로 가짜 객체를 만들기 위해
+    implementation 'com.squareup.retrofit2:retrofit-mock:2.9.0'
+
+    //객체 시리얼 라이즈를 위한 Gson 라이브러리 : http://github.com/google/gson
+    implementation 'com.google.code.gson:gson:2.8.6'
+    //Retrofit에서 Gson을 사용하기 위한 라이브러리
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.2'
 
 }
