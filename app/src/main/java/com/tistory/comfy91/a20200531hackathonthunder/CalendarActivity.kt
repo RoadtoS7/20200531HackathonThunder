@@ -1,12 +1,13 @@
 package com.tistory.comfy91.a20200531hackathonthunder
 
 
-
 import android.content.Context
+import android.content.Intent
 import android.graphics.Rect
 import android.os.Bundle
 import android.util.TypedValue
 import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
@@ -28,15 +29,29 @@ class CalendarActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.actionbar_action, menu)
+        val barPen = menu?.findItem(R.id.bar_pen)
+        barPen?.setOnMenuItemClickListener(MenuItem.OnMenuItemClickListener {
+            val intent = Intent(this@CalendarActivity, WriteActivity::class.java)
+            startActivity(intent)
+            return@OnMenuItemClickListener false
+        })
         return true
+
+        val barList = menu?.findItem(R.id.bar_list)
+        barList?.setOnMenuItemClickListener(MenuItem.OnMenuItemClickListener {
+            val intent = Intent(this@CalendarActivity, ListViewActivity::class.java)
+            startActivity(intent)
+            return@OnMenuItemClickListener false
+        })
     }
 
-    private fun initAppBar(){
+    private fun initAppBar() {
         val ab: androidx.appcompat.app.ActionBar? = supportActionBar
         ab?.setIcon(R.drawable.main_img_logo)
         ab?.setDisplayUseLogoEnabled(true)
         ab?.setDisplayShowHomeEnabled(true)
     }
+
     private fun initUi() {
         val rvAdapterApril = CalendarAdapter(this@CalendarActivity)
             .apply {
@@ -288,7 +303,8 @@ class CalendarActivity : AppCompatActivity() {
     }
 
 
-    class CalItemDecoration(private val context: Context, private val space: Int) : ItemDecoration() {
+    class CalItemDecoration(private val context: Context, private val space: Int) :
+        ItemDecoration() {
         override fun getItemOffsets(
             outRect: Rect, view: View,
             parent: RecyclerView, state: RecyclerView.State
@@ -305,7 +321,7 @@ class CalendarActivity : AppCompatActivity() {
 //            }
         }
 
-        private fun dpToPx( dp: Int): Int {
+        private fun dpToPx(dp: Int): Int {
             return TypedValue.applyDimension(
                 TypedValue.COMPLEX_UNIT_DIP,
                 dp.toFloat(),
